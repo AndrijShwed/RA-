@@ -53,13 +53,38 @@
             height: 90vh;
         }
 
-        .card {
+        /*.card {
             background: #ebe9dc;
             border-radius: 18px;
             padding: 20px;
             box-shadow: 0 2px 8px rgba(0,0,0,.15);
             position: relative;
+        }*/
+
+        /*.card {*/
+            /* Залишаємо форму та тінь */
+            /*border-radius: 18px;
+            box-shadow: 0 2px 8px rgba(0,0,0,.15);
+            position: relative;
+            padding: 20px;*/
+            /* Прозорий, трохи затемнений фон */
+            /*background-color: rgba(235, 233, 220, 0.8);*/ /* останнє число = прозорість 0-1 */
+        /*}*/
+
+        .card {
+            position: relative;
+            padding: 20px;
+            border-radius: 10px;
+            /* Скляний ефект */
+            background: rgba(0, 0, 0, 0.1); /* напівпрозорий темний фон */
+            /*backdrop-filter: blur(10px);*/ /* розмиття фону позаду */
+            -webkit-backdrop-filter: blur(10px); /* для Safari */
+            /* Витончений темний контур */
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            /* Тінь для легкого об’єму */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
+
 
         .card-header {
             display: flex;
@@ -89,12 +114,11 @@
         /* ===== TICKER ===== */
         .ticker {
             margin: 18px -20px;
-            background: #7b5a2e;
+            background: #6a4e27;
             overflow: hidden;
-            height: 40px; /* зменшена висота */
-
-            display: flex; /* додаємо Flex */
-            align-items: center; /* вертикальне центрування тексту */
+            height: 25px; /* висота стрічки */
+            display: flex;
+            align-items: center; /* центрування тексту по вертикалі */
         }
 
         .ticker-track {
@@ -107,7 +131,8 @@
                 font-size: 16px;
                 font-weight: 500;
                 white-space: nowrap;
-                padding: 0 50px;
+                /* Відступи тільки з боків, зверху/знизу прибрано */
+                padding: 0 25px;
                 color: #fff;
             }
 
@@ -133,7 +158,8 @@
 
             .person h2 {
                 margin: 6px 0 0;
-                font-size: 26px;
+                font-size: 22px;
+                font-weight: 600;
                 line-height: 1.2;
             }
 
@@ -159,7 +185,7 @@
             height: 32px;
             fill: black; /* чорний колір */
             stroke: black; /* додаємо обведення для ефекту "жирності" */
-            stroke-width: 2; /* робить лінії товстішими */
+            stroke-width: 1; /* робить лінії товстішими */
         }
 
 
