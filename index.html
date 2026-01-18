@@ -97,7 +97,7 @@
 
         /* ===== TICKER ===== */
         .ticker {
-            margin: 120px -20px 0 -20px;
+            margin: 140px -20px 10px -20px;
             background: #6a4e27;
             overflow: hidden;
             height: 25px; /* висота стрічки */
@@ -210,9 +210,15 @@
                 font-weight: 500;
             }
 
+            .nav-item svg {
+                width: 100%; /* підлаштовуємо ширину під контейнер */
+                height: auto; /* висота автоматично по пропорціях SVG */
+                max-height: 100%; /* не виходить за межі контейнера */
+            }
+
         .icon-box {
-            width: 28px;
-            height: 28px;
+            width: 40px;
+            height: 40px;
             display: flex;
             justify-content: center;
             align-items: center;
