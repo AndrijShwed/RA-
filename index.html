@@ -40,10 +40,7 @@
 
         /* ===== CARD ===== */
         .container {
-            /*padding: 30px 16px 50px;*/
-            padding: 50px 16px 50px;
-            min-height: calc(100vh - 70px); /* 70px — bottom-nav */
-            box-sizing: border-box;
+            padding: 30px 16px 50px;
         }
 
         .card {
@@ -62,23 +59,6 @@
             /* Тінь для легкого об’єму */
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
-
-        .card-top {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        .card-bottom {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .card-spacer {
-            flex-grow: 1;
-        }
-
 
         .card-header {
             display: flex;
@@ -109,7 +89,7 @@
 
         /* ===== TICKER ===== */
         .ticker {
-            margin: 0 -20px 10px -20px;
+            margin: 80px -20px 10px -20px;
             background: #6a4e27;
             overflow: hidden;
             height: 25px; /* висота стрічки */
@@ -253,60 +233,52 @@
     <!-- CONTENT -->
     <div class="container">
         <div class="card">
-            <div class="card-top">
-                <div class="card-header">
-                    <h1>Військово-обліковий<br>документ</h1>
+            <div class="card-header">
+                <h1>Військово-обліковий<br>документ</h1>
 
-                    <!-- TRIDENT -->
-                    <svg class="emblem" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" style="width: 40px;">
-                        <path d="M5,5 H95 V80 C95,95 75,110 50,115 C25,110 5,95 5,80 Z" fill="black" />
+                <!-- TRIDENT -->
+                <svg class="emblem" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" style="width: 40px;">
+                    <path d="M5,5 H95 V80 C95,95 75,110 50,115 C25,110 5,95 5,80 Z" fill="black" />
 
-                        <path d="M50,25
-                                 L58,40 V85 H66 V38 L78,38 V80
-                                 C78,90 70,98 50,98
-                                 C30,98 22,90 22,80
-                                 V38 H34 V85 H42 V40 Z"
-                              fill="#ced0b9" />
+                    <path d="M50,25
+                                L58,40 V85 H66 V38 L78,38 V80
+                                C78,90 70,98 50,98
+                                C30,98 22,90 22,80
+                                V38 H34 V85 H42 V40 Z"
+                            fill="#ced0b9" />
 
-                        <path d="M50,25 L42,40 V85 H58 V40 Z" fill="#ced0b9" />
+                    <path d="M50,25 L42,40 V85 H58 V40 Z" fill="#ced0b9" />
 
-                        <path d="M50,98 V108 L55,98 H45 L50,108 Z" fill="#ced0b9" />
-                    </svg>
+                    <path d="M50,98 V108 L55,98 H45 L50,108 Z" fill="#ced0b9" />
+                </svg>
 
-                </div>
-
-                <div class="label">Дата народження:</div>
-                <div class="value">28.06.1998</div>
-
-                <div class="label">Відстрочка до:</div>
-                <div class="value">Завершення мобілізації</div>
             </div>
 
-            <div class="card-spacer"></div>
+            <div class="label">Дата народження:</div>
+            <div class="value">28.06.1998</div>
 
-            <div class="card-bottom">
-                <div class="ticker">
-                    <div class="ticker-track">
-                        <span>Документ оновлено о 08:13 | 19.01.2026 •</span>
-                        <span>Документ оновлено о 08:13 | 19.01.2026 •</span>
-                        <span>Документ оновлено о 08:13 | 19.01.2026 •</span>
-                        <span>Документ оновлено о 08:13 | 19.01.2026 •</span>
-                    </div>
-                </div>
-
-                <div class="person">
-                    <small>На обліку</small>
-                    <h2>КУШУЛІНСЬКИЙ<br>Володимир<br>Володимирович</h2>
-                </div>
-
-                <div class="add-btn">
-                    <svg class="add-icon" width="32" height="32" viewBox="0 0 24 24" fill="black">
-                        <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z" />
-                    </svg>
-                </div>
-            </div>
+            <div class="label">Відстрочка до:</div>
+            <div class="value">Завершення мобілізації</div>
             
+            <div class="ticker">
+                <div class="ticker-track">
+                    <span>Документ оновлено о 08:13 | 19.01.2026 •</span>
+                    <span>Документ оновлено о 08:13 | 19.01.2026 •</span>
+                    <span>Документ оновлено о 08:13 | 19.01.2026 •</span>
+                    <span>Документ оновлено о 08:13 | 19.01.2026 •</span>
+                </div>
+            </div>
 
+            <div class="person">
+                <small>На обліку</small>
+                <h2>КУШУЛІНСЬКИЙ<br>Володимир<br>Володимирович</h2>
+            </div>
+
+            <div class="add-btn">
+                <svg class="add-icon" width="32" height="32" viewBox="0 0 24 24" fill="black">
+                    <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z" />
+                </svg>
+            </div>
         </div>
     </div>
 
