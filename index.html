@@ -98,6 +98,7 @@
         }
 
         .ticker-track {
+            color: white;
             display: flex;
             width: max-content;
             animation: ticker 18s linear infinite;
@@ -209,8 +210,8 @@
             }
 
         .icon-box {
-            width: 40px;
-            height: 40px;
+            width: 20px;
+            height: 25px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -245,7 +246,7 @@
                                 C78,90 70,98 50,98
                                 C30,98 22,90 22,80
                                 V38 H34 V85 H42 V40 Z"
-                            fill="#ced0b9" />
+                          fill="#ced0b9" />
 
                     <path d="M50,25 L42,40 V85 H58 V40 Z" fill="#ced0b9" />
 
@@ -259,13 +260,16 @@
 
             <div class="label">Відстрочка до:</div>
             <div class="value">Завершення мобілізації</div>
-            
+
             <div class="ticker">
-                <div class="ticker-track">
-                    <span>Документ оновлено о 08:13 | 19.01.2026 •</span>
-                    <span>Документ оновлено о 08:13 | 19.01.2026 •</span>
-                    <span>Документ оновлено о 08:13 | 19.01.2026 •</span>
-                    <span>Документ оновлено о 08:13 | 19.01.2026 •</span>
+                <!--<div class="ticker-track">
+                        <span>Документ оновлено о @DateTime.Now.ToString("HH:mm | dd.MM.yyyy") •</span>
+                        <span>Документ оновлено о 08:13 | 19.01.2026 •</span>
+                        <span>Документ оновлено о 08:13 | 19.01.2026 •</span>
+                        <span>Документ оновлено о 08:13 | 19.01.2026 •</span>
+                     </div>-->
+                <div class="ticker-track" id="tickerTrack">
+                     JS підставить час сюди 
                 </div>
             </div>
 
@@ -288,17 +292,17 @@
             <div class="icon-box">
                 <svg width="20" height="25" viewBox="0 0 20 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="0" y="0" width="20" height="25" rx="1" fill="black" />
-                    <rect x="2" y="10" fill="white" width="16" height="4" />
-                    <rect x="2" y="18" fill="white" width="16" height="4" />
+                    <rect x="2" y="12" fill="white" width="16" height="3" />
+                    <rect x="2" y="18" fill="white" width="16" height="3" />
                 </svg>
             </div>
-            <span class="bold-text">Резерв ID</span>
+            <span style="font-weight: 700">Резерв ID</span>
         </a>
 
         <a href="#" class="nav-item">
             <div class="icon-box">
                 <svg width="20" height="25" viewBox="0 0 20 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="0" y="0" width="20" height="25" rx="1" stroke="black" stroke-width="2" />
+                    <rect x="0" y="0" width="20" height="25" rx="1" stroke="black" stroke-width="4" />
                     <path d="M10 5l-7 7 7 7 7-7-7-7z" fill="black" />
                 </svg>
             </div>
@@ -308,12 +312,29 @@
         <a href="#" class="nav-item">
             <div class="icon-box">
                 <svg width="20" height="25" viewBox="0 0 20 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0 7h20M0 12h20M0 17h20" stroke="black" stroke-width="2" stroke-linecap="round" />
+                    <path d="M2 7h16M2 12h16M2 17h16" stroke="black" stroke-width="2" stroke-linecap="round" />
                 </svg>
             </div>
             <span>Меню</span>
         </a>
     </nav>
+
+    <script>
+        // Поточний час і дата при завантаженні сторінки
+        const now = new Date();
+        const hours = now.getHours().toString().padStart(2, '0');
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const day = now.getDate().toString().padStart(2, '0');
+        const month = (now.getMonth() + 1).toString().padStart(2, '0');
+        const year = now.getFullYear();
+
+        const currentTime = `Документ оновлено о ${hours}:${minutes} | ${day}.${month}.${year} • `;
+
+        const tickerTrack = document.getElementById('tickerTrack');
+
+        // Додаємо кілька повторів для прокрутки
+        tickerTrack.innerHTML = currentTime.repeat(4);
+    </script>
 
 </body>
 </html>
