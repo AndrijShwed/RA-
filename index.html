@@ -227,6 +227,76 @@
             justify-content: center;
             align-items: center;
         }
+
+        /* ===== iOS BOTTOM SHEET ===== */
+        .sheet-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.45);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .25s ease;
+            z-index: 9999;
+        }
+
+            .sheet-overlay.active {
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+        .sheet {
+            width: 100%;
+            max-width: 500px;
+            background: #fff;
+            border-radius: 18px 18px 0 0;
+            padding: 10px 0 25px;
+            transform: translateY(100%);
+            transition: transform .25s ease;
+        }
+
+        .sheet-overlay.active .sheet {
+            transform: translateY(0);
+        }
+
+        .sheet-handle {
+            width: 40px;
+            height: 5px;
+            background: #ccc;
+            border-radius: 10px;
+            margin: 8px auto 12px;
+        }
+
+        .sheet-item {
+            width: 100%;
+            padding: 14px 20px;
+            border: none;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+            .sheet-item:active {
+                background: #f2f2f2;
+            }
+
+            .sheet-item span:first-child {
+                font-size: 18px;
+                width: 24px;
+                text-align: center;
+            }
+
+            .sheet-item svg {
+                width: 22px;
+                height: 22px;
+                flex-shrink: 0;
+            }
+
     </style>
 </head>
 
@@ -280,7 +350,7 @@
                         <span>Документ оновлено о 08:13 | 19.01.2026 •</span>
                      </div>-->
                 <div class="ticker-track" id="tickerTrack">
-                     JS підставить час сюди 
+                    JS підставить час сюди
                 </div>
             </div>
 
@@ -330,6 +400,68 @@
         </a>
     </nav>
 
+    <div class="sheet">
+        <div class="sheet-handle"></div>
+
+        <button class="sheet-item">
+            <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" stroke="black" stroke-width="2" fill="none" />
+                <line x1="12" y1="10" x2="12" y2="16" stroke="black" stroke-width="2" />
+                <circle cx="12" cy="7" r="1.5" fill="black" />
+            </svg>
+            <span>Переглянути документ</span>
+        </button>
+
+        <button class="sheet-item">
+            <svg viewBox="0 0 24 24">
+                <path d="M6 2h8l4 4v16H6z" fill="none" stroke="black" stroke-width="2" />
+                <path d="M14 2v4h4" stroke="black" stroke-width="2" />
+            </svg>
+            <span>Завантажити PDF</span>
+        </button>
+
+        <button class="sheet-item">
+            <svg viewBox="0 0 24 24">
+                <path d="M3 12a9 9 0 1 0 3-6" fill="none" stroke="black" stroke-width="2" />
+                <polyline points="3 4 3 10 9 10" fill="none" stroke="black" stroke-width="2" />
+            </svg>
+            <span>Оновити документ</span>
+        </button>
+
+        <button class="sheet-item">
+            <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9" fill="none" stroke="black" stroke-width="2" />
+                <line x1="12" y1="8" x2="12" y2="16" stroke="black" stroke-width="2" />
+                <line x1="8" y1="12" x2="16" y2="12" stroke="black" stroke-width="2" />
+            </svg>
+            <span>Розширені дані з реєстру</span>
+        </button>
+
+        <button class="sheet-item">
+            <svg viewBox="0 0 24 24">
+                <path d="M6 2h8l4 4v16H6z" fill="none" stroke="black" stroke-width="2" />
+                <line x1="9" y1="13" x2="15" y2="13" stroke="black" stroke-width="2" />
+            </svg>
+            <span>Подати запит на відстрочку</span>
+        </button>
+
+        <button class="sheet-item">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 5v14M5 12h14" stroke="black" stroke-width="2" stroke-linecap="round" />
+            </svg>
+            <span>Направлення на ВЛК</span>
+        </button>
+
+        <button class="sheet-item">
+            <svg viewBox="0 0 24 24">
+                <path d="M3 17.25V21h3.75L18.37 9.38l-3.75-3.75L3 17.25z"
+                      fill="none" stroke="black" stroke-width="2" />
+            </svg>
+            <span>Уточнити контактні дані</span>
+        </button>
+    </div>
+
+
     <script>
         // Поточний час і дата при завантаженні сторінки
         const now = new Date();
@@ -346,6 +478,22 @@
         // Додаємо кілька повторів для прокрутки
         tickerTrack.innerHTML = currentTime.repeat(4);
     </script>
+
+    <script>
+        const addBtn = document.querySelector('.add-btn');
+        const sheetOverlay = document.getElementById('sheetOverlay');
+
+        addBtn.addEventListener('click', () => {
+            sheetOverlay.classList.add('active');
+        });
+
+        sheetOverlay.addEventListener('click', (e) => {
+            if (e.target === sheetOverlay) {
+                sheetOverlay.classList.remove('active');
+            }
+        });
+    </script>
+
 
 </body>
 </html>
