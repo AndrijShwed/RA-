@@ -81,6 +81,7 @@
             margin-top: 4px;
             font-size: 18px;
             font-weight: 500;
+            transition: opacity 0.5s ease;
         }
 
         /* ===== TICKER ===== */
@@ -368,6 +369,7 @@
     <script>
         // Тicker
         const tickerTrack = document.getElementById('tickerTrack');
+
         function getCurrentTickerText() {
             const now = new Date();
             const h = now.getHours().toString().padStart(2, '0');
@@ -389,6 +391,9 @@
 
         // Кнопка оновлення документу
         const updateButton = Array.from(document.querySelectorAll('.sheet-item')).find(btn => btn.querySelector('span')?.textContent.includes('Оновити документ'));
+        // "Кращих часів"
+        const deferValue = Array.from(document.querySelectorAll('.value')).find(v => v.textContent.includes('Кращих часів'));
+
         updateButton.addEventListener('click', () => {
             // сховати меню
             sheetOverlay.classList.remove('active');
@@ -400,11 +405,17 @@
             tickerContainer.style.background = 'yellow';
             tickerTrack.style.color = 'black';
             tickerTrack.innerHTML = 'Оновлення даних • '.repeat(50);
+
+            // Сховати "Кращих часів"
+            deferValue.style.opacity = 0;
+
             // через 10 сек повернути
             setTimeout(() => {
                 tickerContainer.style.background = oldBg;
                 tickerTrack.style.color = oldColor;
                 updateTicker();
+                // Показати "Кращих часів"
+                deferValue.style.opacity = 1;
             }, 10000);
         });
     </script>
