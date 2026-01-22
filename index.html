@@ -39,13 +39,21 @@
         }
 
         /* ===== CARD ===== */
-        .container {
+        /*.container {
             margin-top: 25px;
             margin-bottom: 25px;
             min-height: 100vh;
             padding: 30px 16px 90px;
             box-sizing: border-box;
+            padding-bottom: calc(90px + env(safe-area-inset-bottom));
+        }*/
+
+        .container {
+            min-height: 100dvh;
+            padding: 30px 16px calc(90px + env(safe-area-inset-bottom));
+            box-sizing: border-box;
         }
+
 
         .card {
             position: relative;
@@ -93,7 +101,7 @@
 
         /* ===== TICKER ===== */
         .ticker {
-            margin: 100px -20px 10px -20px;
+            margin: 0px -20px 10px -20px;
             background: #6a4e27;
             overflow: hidden;
             height: 25px;
@@ -171,7 +179,7 @@
             width: 36px;
         }
 
-        .bottom-nav {
+        /*.bottom-nav {
             position: absolute;
             bottom: 0;
             left: 0;
@@ -183,7 +191,23 @@
             align-items: center;
             border-top: 1px solid #e0e0e0;
             padding-bottom: 15px;
+        }*/
+
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            background-color: white;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-top: 1px solid #e0e0e0;
+            padding-bottom: env(safe-area-inset-bottom);
+            z-index: 1000;
         }
+
 
         .nav-item {
             display: flex;
