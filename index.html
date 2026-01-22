@@ -271,13 +271,14 @@
             }
 
         .person-data-wrapper {
+           margin-top: 20px;
             display: flex;
             gap: 12px;
             align-items: stretch;
         }
 
         .photo {
-            width: 110px;
+            width: 140px;
             flex-shrink: 0;
         }
 
@@ -289,10 +290,10 @@
             }
 
         .person-data {
-            display: grid;
-            grid-template-columns: auto 1fr;
-            row-gap: 6px;
-            column-gap: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content:flex-start;
+            gap: 6px;
         }
 
 
@@ -314,7 +315,7 @@
     <div class="container">
         <div class="card">
             <div class="card-header">
-                <h1>Військово-обліковий<br>документ</h1>
+                <h1>Резерв ID</h1>
                 <svg class="emblem" viewBox="0 0 100 120">
                     <path d="M5,5 H95 V80 C95,95 75,110 50,115 C25,110 5,95 5,80 Z" fill="black" />
                     <path d="M50,25 L58,40 V85 H66 V38 L78,38 V80 C78,90 70,98 50,98 C30,98 22,90 22,80 V38 H34 V85 H42 V40 Z" fill="#ced0b9" />
@@ -325,7 +326,7 @@
 
             <div class="person-data-wrapper">
                 <div class="photo">
-                    <img src="Image/person.jpg" alt="Фото" />
+                    <img src="Image/photo1.png" alt="Фото" />
                 </div>
 
                 <div class="person-data">
