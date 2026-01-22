@@ -39,15 +39,6 @@
         }
 
         /* ===== CARD ===== */
-        /*.container {
-            margin-top: 25px;
-            margin-bottom: 25px;
-            min-height: 100vh;
-            padding: 30px 16px 90px;
-            box-sizing: border-box;
-            padding-bottom: calc(90px + env(safe-area-inset-bottom));
-        }*/
-
         .container {
             min-height: calc(100dvh - 70px);
             padding: 25px 16px;
@@ -90,14 +81,15 @@
 
         /* ===== LABELS ===== */
         .label {
-            margin-top: 16px;
+            margin-top: 5px;
             font-size: 14px;
-            line-height: 0.1;
+            line-height: 1.1;
             color: #555;
         }
 
         .value {
             margin-top: 4px;
+            margin-bottom: 16px;
             font-size: 18px;
             font-weight: 500;
             transition: opacity 0.5s ease;
@@ -118,7 +110,7 @@
             color: white;
             display: flex;
             width: max-content;
-            animation: ticker 35s linear infinite;
+            animation: ticker 60s linear infinite;
             flex-wrap: nowrap;
             white-space: nowrap;
         }
@@ -182,20 +174,6 @@
             right: 20px;
             width: 36px;
         }
-
-        /*.bottom-nav {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 70px;
-            background-color: white;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            border-top: 1px solid #e0e0e0;
-            padding-bottom: 15px;
-        }*/
 
         .bottom-nav {
             position: fixed;
