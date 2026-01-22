@@ -41,7 +41,10 @@
         /* ===== CARD ===== */
         .container {
             margin-top: 25px;
-            padding: 30px 16px 50px;
+            margin-bottom: 25px;
+            min-height: 100vh;
+            padding: 30px 16px 90px;
+            box-sizing: border-box;
         }
 
         .card {
@@ -55,6 +58,10 @@
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(0, 0, 0, 0.3);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .flex-spacer {
+            flex-grow: 1;
         }
 
         .card-header {
@@ -86,7 +93,7 @@
 
         /* ===== TICKER ===== */
         .ticker {
-            margin: 140px -20px 10px -20px;
+            margin: 100px -20px 10px -20px;
             background: #6a4e27;
             overflow: hidden;
             height: 25px;
@@ -339,6 +346,7 @@
                
             </div>
             
+            <div class="flex-spacer"></div>
 
             <div class="ticker">
                 <div class="ticker-track" id="tickerTrack">JS підставить час сюди</div>
