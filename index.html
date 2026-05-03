@@ -455,7 +455,8 @@
         // Кнопка оновлення документу
         const updateButton = Array.from(document.querySelectorAll('.sheet-item')).find(btn => btn.querySelector('span')?.textContent.includes('Оновити документ'));
         // "Кращих часів"
-        const deferValue = Array.from(document.querySelectorAll('.value')).find(v => /\b\d{ 2}\.\d{ 2}\.\d{ 4}\b /.test(v.textContent));
+        const deferValue = Array.from(document.querySelectorAll('.person-data .label')).find(l => l.textContent.includes('Відстрочка до'))
+        ?.nextElementSibling;
 
         updateButton.addEventListener('click', () => {
             // сховати меню
